@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="gp-cal">
+        <h3>Name: John Doe</h3>
+        <br>
+    <p>Matric No: "MTS/123/565"</p>
+    <br>
+    <form action="" id="form">
+        <div>
+            <label for="english">English</label>
+            <input type="text" id="english" mode="[0-9]*">
+            <p id="grade1"></p>
+        </div>
+        <br>
+        <div>
+            <label for="maths">Mathematics</label>
+            <input type="text" id="maths" mode="[0-9]*">
+            <p id="grade2"></p>
+        </div>
+        <br>
+        <div>
+            <label for="bio">Biology</label>
+            <input type="text" id="biology" mode="[0-9]*">
+            <p id="grade3"></p>
+        </div>
+        <br>
+        <div>
+            <label for="acc">Account</label>
+            <input type="text" id="account" mode="[0-9]*">
+            <p id="grade4"></p>
+        </div>
+        <br>
+        <div>
+            <label for="eco">Economics</label>
+            <input type="text" id="economics" mode="[0-9]*">
+            <p id="grade5"></p>
+        </div>
+        <br>
+         <input type="submit" value="submit score">
+    </form>
+    </div>
+   
+    
+        <!-- <div>
+            <label for="com">Commerce</label>
+            <input type="text" id="score6" mode="[0-9]*">
+            <p id="grade6"></p>
+        </div>
+        <div>
+            <label for="geo">geography</label>
+            <input type="text" id="score7" mode="[0-9]*">
+            <p id="grade7"></p>
+        </div>
+        <div>
+            <label for="lit">Literature</label>
+            <input type="text" id="score8" mode="[0-9]*">
+            <p id="grade8"></p>
+        </div>
+        <div>
+            <label for="agr">Agric</label>
+            <input type="text" id="score9" mode="[0-9]*">
+            <p id="grade9"></p>
+        </div> -->
+
+        
+    
+
+    <script>
+        const form = document.getElementById('form')
+        const english = document.getElementById('english')
+        const maths = document.getElementById('maths')
+        const biology = document.getElementById('biology')
+        const account = document.getElementById('account')
+        const economics = document.getElementById('economics')
+        
+        console.log(english, maths, biology, account, economics)
+
+        const grade1 = document.getElementById('grade1')
+        const grade2 = document.getElementById('grade2')
+        const grade3 = document.getElementById('grade3')
+        const grade4 = document.getElementById('grade4')
+        const grade5 = document.getElementById('grade5')
+        // const grade6 = document.getElementById('grade6')
+        // const grade7 = document.getElementById('grade7')
+        // const grade8 = document.getElementById('grade8')
+        // const grade9 = document.getElementById('grade9')
+
+        form.addEventListener('submit', (event)=>{
+            event.preventDefault()
+            validateScore(english, grade1)
+            validateScore(maths, grade2)
+            validateScore(biology, grade3)
+            validateScore(account, grade4)
+            validateScore(economics, grade5)
+           
+        })
+       
+        const validateScore=(score, grade)=>{
+            console.log(score.value)
+            if (score.value >  100){
+                alert("score to be between 0-100")
+            }
+            else if(score.value > 74){
+                grade.innerHTML = 'A1'
+            }
+            else if(score.value > 69){
+                grade.innerHTML = 'B2'
+            }
+            else if(score.value > 64){
+                grade.innerHTML = 'B3'
+            }
+            else if(score.value > 59){
+                grade.innerHTML = 'C4'
+            }
+            else if(score.value > 54){
+                grade.innerHTML = 'C5'
+            }
+            else if(score.value > 49){
+                grade.innerHTML = 'C6'
+            }
+            else if(score.value > 44){
+                grade.innerHTML = 'D7'
+            }
+            else if(score.value > 40){
+                grade.innerHTML = 'E8'
+            }
+            else if(score.value < 39){
+                grade.innerHTML = 'F9'    
+            }
+            else{
+                alert('All fields are required!')
+            }
+        }
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
